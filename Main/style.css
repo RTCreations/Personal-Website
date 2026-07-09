@@ -13,6 +13,19 @@
     }
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 99px;
+}
+
 :focus-visible {
     outline: 3px solid #2563eb;
     outline-offset: 2px;
@@ -33,14 +46,14 @@
 :root {
     --text-color: #ffffff;
     --bg-color: #121212;
-    --link-color: #0050b3;
+    --link-color: #636363;
     --white: #ffffff;
     --black: #111111;
     --dark-purple: #4c1d95;
 }
 
 html {
-    font-size: 100%
+    font-size: 100%;
 }
 
 body {
@@ -51,6 +64,30 @@ body {
     color: var(--text-color);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 200;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.in {
+    opacity: 1;
+    transform: none;
+}
+
+.delay1 {
+    transition-delay: 0.1s;
+}
+
+.delay2 {
+    transition-delay: 0.2s;
+}
+
+.delay3 {
+    transition-delay: 0.3s;
 }
 
 a {
@@ -60,17 +97,22 @@ a {
 
 .site-header {
     padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, #1f2937, #111827);
 }
 
-#name {
+#heading-container {
     margin: 0 0 1rem;
 }
 
 .navbar {
-    background-color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     border-radius: 8px;
     padding: 0.5rem 1rem;
+}
+
+.navbar.on {
+    font-weight: 500;
 }
 
 .navbar ul {
@@ -90,8 +132,8 @@ a {
 
 .navbar ul li a,
 .navbar ul li button {
-    text-decoration: none;
-    color: var(--black);
+    text-decoration: bold;
+    text-align: center;
     padding: 10px;
     display: inline-block;
     width: 100%;
@@ -104,25 +146,89 @@ a {
     border: none;
 }
 
-.navbar ul .nav-item a:hover,
-.navbar ul .nav-item button:hover {
-    background-color: var(--dark-purple);
-    color: var(--white);
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
 }
 
-.sub-menu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 0.25rem);
-    left: 0;
-    background: var(--white);
-    color: var(--black);
-    padding: 0.5rem;
-    min-width: 140px;
-    border-radius: 6px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.2s ease-out;
 }
 
-.nav-item:hover .sub-menu {
-    display: block;
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+#name {
+    font-size: 5rem;
+    padding: 0;
+    margin: 2rem;
+}
+
+#short-description {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+    margin-left: 2rem;
+}
+
+#projects-button {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin: 2rem;
+    border-radius: 4px;
+    background-color: #2f2f2f;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #535353;
+    margin: 2rem 0;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem;
+}
+
+#html-icon, #css-icon, #java-icon, #javascript-icon {
+    width: 6rem;
+    height: 6rem;
+}
+
+#contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem;
+    margin-top: 6rem;
+}
+
+#linkedin-icon, #github-icon, #email-icon {
+    width: 6rem;
+    height: 6rem;
+    margin: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #0f0f0f;
+    color: #ffffff;
 }

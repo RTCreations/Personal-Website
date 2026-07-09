@@ -11,29 +11,47 @@
 </head>
 <body>
     <header class="site-header">
-        <h1 id="name">Ryu Rivera</h1>
-        <nav class="navbar" aria-label="Primary navigation">
+        <nav class="navbar" aria-label="Navigation bar">
             <ul>
-                <li class="nav-item"><a href="#">Dashboard</a></li>
-                <li class="nav-item"><a href="#">Widgets</a></li>
-                <li class="nav-item">
-                    <button aria-expanded="false">Apps</button>
-                    <ul class="sub-menu" aria-label="Apps">
-                        <li><a href="#">Widgets</a></li>
-                        <li><a href="#">Feedback</a></li>
-                        <li><a href="#">Settings</a></li>
-                    </ul>
-                </li>
+                <p>RTCreations</p>
+                <li class="nav-item"><a href="#heading" class="hover-underline-animation">Heading</a></li>
+                <li class="nav-item"><a href="#contacts" class="hover-underline-animation">Contacts</a></li>
+                <li class="nav-item"><a href="#desmos" class="hover-underline-animation">Desmos</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <p>This is my personal website!</p>
+        <div id = "heading-container">
+            <h1 id="name">Ryu Rivera</h1>
+            <p id="short-description">Aspiring Software Engineer and High School Student.</p>
+            <p id="short-description">Looking forward to collaborating and building new things!</p>
+            <button id="projects-button">View my projects</button>
+            <hr id="short-line">
+            <div class="icon-container">
+                <h1 id="skills-title">Specialties</h1>
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" id="html-icon" alt="HTML Icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/136/136527.png" id="css-icon" alt="CSS Icon">
+                <img src="https://images.vexels.com/media/users/3/166401/isolated/preview/b82aa7ac3f736dd78570dd3fa3fa9e24-java-programming-language-icon.png" id="java-icon" alt="Java Icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" id="javascript-icon" alt="JavaScript Icon">
+            </div> 
+        </div>
+
+        <div id="contacts">
+            <h1 id="contacts-title">Contacts</h1>
+            <p id="contacts-description">Feel free to reach out to me through any of the following platforms:</p>
+            <div class="contact-icons">
+                <a href="https://www.linkedin.com/in/ryu-rivera/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" id="linkedin-icon" alt="LinkedIn Icon"></a>
+                <a href="https://github.com/RTCreations" target="_blank"><img src="https://cdn.worldvectorlogo.com/logos/github-icon-2.svg" id="github-icon" alt="GitHub Icon"></a>
+                <a href="mailto:ryurivera103@gmail.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1280px-Gmail_icon_%282020%29.svg.png" id="email-icon" alt="Email Icon"></a>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Ryu Rivera</p>
     </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>
