@@ -1,0 +1,1 @@
+const projects = document.querySelectorAll('.project');
